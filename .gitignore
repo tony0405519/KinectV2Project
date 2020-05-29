@@ -1,0 +1,9 @@
+.vs
+Library
+/Temp
+/obj/Debug
+/obj
+/.vs
+/Library
+/dnn_model_2_0.onnx
+/cudnn64_7.dll
