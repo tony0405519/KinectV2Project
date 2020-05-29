@@ -136,6 +136,9 @@
      <Compile Include="Assets\AzureKinectExamples\KinectScripts\UserMeshRenderer.cs" />
      <Compile Include="Assets\AzureKinectExamples\KinectScripts\UserMeshRendererGpu.cs" />
      <Compile Include="Assets\AzureKinectExamples\KinectScripts\UserSkeletonCollider.cs" />
+     <Compile Include="Assets\Script\GameMgr.cs" />
+     <Compile Include="Assets\Script\MainMgr.cs" />
+     <Compile Include="Assets\Script\Sponge.cs" />
      <None Include="Assets\AzureKinectExamples\KinectDemos\PointCloudDemo\VFX\DownloadMoreVFX.txt" />
      <None Include="Assets\AzureKinectExamples\Resources\MedianShader.shader" />
      <None Include="Assets\AzureKinectExamples\Resources\UserHistImageShader.shader" />
