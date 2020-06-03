@@ -102,7 +102,9 @@ public class GameMgr : MonoBehaviour {
     }
 
     private void addPoint() {
-        //TODO:
+        //TODO: 
+        //score += 10
+        //ScoreText.text = "SCORE: " + score
     }
 
 
