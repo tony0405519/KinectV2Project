@@ -12,6 +12,8 @@ public class GameMgr : MonoBehaviour {
     [Tooltip("sponge moving speed")]
     public float movingSpeed;
 
+    public static GameMgr inst = null;
+
     private Sponge curSponge;
     private GameObject curAnswer = null;
     private int curID = -1;
@@ -23,6 +25,19 @@ public class GameMgr : MonoBehaviour {
         showAnswer
     }
     private GameState curState = GameState.ready;
+
+    void Awake()
+    {
+        if (inst == null)
+        {
+            inst = this;
+            DontDestroyOnLoad(this);
+        }
+        else if (this != inst)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start() {
         
@@ -98,6 +113,7 @@ public class GameMgr : MonoBehaviour {
     }
 
     private void getDamage() {
+
         //TODO:
     }
 
