@@ -10,6 +10,7 @@ public class GameMgr : MonoBehaviour {
     [Tooltip("position of answer showing")]
     public Vector3 answerInitPos;
     [Tooltip("sponge moving speed")]
+    public Vector3 movingDir;
     public float movingSpeed;
 
     public static GameMgr inst = null;
@@ -24,6 +25,7 @@ public class GameMgr : MonoBehaviour {
         moving,
         showAnswer
     }
+    [SerializeField, Tooltip("For Debug")]
     private GameState curState = GameState.ready;
 
     void Awake()
@@ -73,13 +75,14 @@ public class GameMgr : MonoBehaviour {
 
     private void moveSponge() {
         // keep moving sponge
-        Vector3 movingDir = new Vector3(0, 0, 1);
         curSponge.transform.position += Vector3.Scale(movingDir, new Vector3(movingSpeed, movingSpeed, movingSpeed));
     }
 
     private void showAnswer() {
         if(curAnswer == null) {
             curAnswer = Instantiate(answers[curID], answerInitPos, Quaternion.identity);
+            //should use answer call this
+            closeAnswer();
         }
     }
 
