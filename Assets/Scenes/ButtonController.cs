@@ -29,14 +29,17 @@ public class ButtonController : MonoBehaviour
     }
 
     public GameObject soundButton;
+    public GameObject bgm;
 
     public void soundOff()
     {
         soundButton.SetActive(true);
+        bgm.SetActive(false);
     }
 
     public void soundOn()
     {
         soundButton.SetActive(false);
+        bgm.SetActive(true);
     }
 }
