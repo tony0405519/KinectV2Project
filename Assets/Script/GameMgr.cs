@@ -25,8 +25,8 @@ public class GameMgr : MonoBehaviour {
         moving,
         showAnswer
     }
-    [SerializeField, Tooltip("For Debug")]
-    private GameState curState = GameState.ready;
+    //[SerializeField, Tooltip("For Debug")]
+    private GameState curState = GameState.genSponge;
 
     void Awake()
     {
@@ -127,5 +127,5 @@ public class GameMgr : MonoBehaviour {
     }
 
 
-
+    
 }
