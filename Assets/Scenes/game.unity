@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -563,12 +563,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055f0ba053b7bb84999cb8c7ab7a2e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answers: []
+  answers:
+  - {fileID: 7208568429206184766, guid: f9352dd6dc12d5645a9f2f73ff2b09b7, type: 3}
+  - {fileID: 7965405590852713003, guid: 628a284559a1280409005e5dca9bf1d4, type: 3}
   spongePrefab:
-  - {fileID: 5285929252588771148, guid: 628a284559a1280409005e5dca9bf1d4, type: 3}
-  spongeInitPos: {x: -1, y: 0, z: 5}
+  - {fileID: 7426660317438574157, guid: f9352dd6dc12d5645a9f2f73ff2b09b7, type: 3}
+  - {fileID: 6493501107592098100, guid: 628a284559a1280409005e5dca9bf1d4, type: 3}
+  spongeInitPos: {x: 0, y: 0, z: 5}
   answerInitPos: {x: 0, y: 0, z: 0}
-  movingDir: {x: 0, y: 0, z: -0.5}
+  movingDir: {x: 0, y: 0, z: -1}
   movingSpeed: 0.01
 --- !u!4 &810986357
 Transform:
@@ -1101,11 +1104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100176, guid: ae23d50304c93b9418b65cec8f9fe954, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400170, guid: ae23d50304c93b9418b65cec8f9fe954, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.165
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400176, guid: ae23d50304c93b9418b65cec8f9fe954, type: 3}
       propertyPath: m_LocalPosition.x

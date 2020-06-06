@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(MeshCollider), typeof(MeshFilter))]
+[RequireComponent(typeof(MeshCollider), typeof(MeshFilter), typeof(Rigidbody))]
 public class Sponge : MonoBehaviour
 {
     private MeshCollider m_meshCollider;
@@ -9,7 +9,8 @@ public class Sponge : MonoBehaviour
     {
         m_meshCollider = GetComponent<MeshCollider>();
         m_meshFilter= GetComponent<MeshFilter>();
-        m_meshCollider.convex = true;
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().isKinematic = true;
     }
 
     void Start()
@@ -26,5 +27,9 @@ public class Sponge : MonoBehaviour
             GameMgr.inst.playerHit();
             Destroy(gameObject);
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(name + " collision " + collision.collider.name);
     }
 }
