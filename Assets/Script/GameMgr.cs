@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class GameMgr : MonoBehaviour {
 
+    public UnityEngine.UI.Text scoreText;
+
     public GameObject[] answers;
     public Sponge[] spongePrefab;
+
     [Tooltip("position of sponge generate")]
     public Vector3 spongeInitPos;
     [Tooltip("position of answer showing")]
@@ -18,6 +21,7 @@ public class GameMgr : MonoBehaviour {
     private Sponge curSponge;
     private GameObject curAnswer = null;
     private int curID = -1;
+    private int score = 0;
 
     private enum GameState {
         ready = 0,
@@ -89,6 +93,9 @@ public class GameMgr : MonoBehaviour {
     //called when player hit by sponge
     public void playerHit() {
         getDamage();
+        //delete sponge
+        Destroy(curSponge.gameObject);
+
         //show answer
         curState = GameState.showAnswer;
     }
@@ -116,14 +123,15 @@ public class GameMgr : MonoBehaviour {
     }
 
     private void getDamage() {
-
+        score -= 10;
+        scoreText.text = "SCORE: " + score;
         //TODO:
     }
 
     private void addPoint() {
+        score += 10;
+        scoreText.text = "SCORE: " + score;
         //TODO: 
-        //score += 10
-        //ScoreText.text = "SCORE: " + score
     }
 
 

@@ -27,7 +27,14 @@ public class Sponge : MonoBehaviour
             firstHit = false;
             Debug.Log("Player hit");
             GameMgr.inst.playerHit();
-            Destroy(gameObject);
+            //Destroy(gameObject);
+        }
+        else if(other.tag == "MainCamera" && firstHit)
+        {
+            firstHit = false;
+            Debug.Log("Pass Stage");
+            GameMgr.inst.passStage();
+            //Destroy(gameObject);
         }
     }
     private void OnCollisionEnter(Collision collision)
