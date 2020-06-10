@@ -2179,9 +2179,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120, y: -30}
-  m_SizeDelta: {x: 240, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 0}
+  m_SizeDelta: {x: 400, y: 60}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1539360044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,7 +2208,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2397,15 +2397,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055f0ba053b7bb84999cb8c7ab7a2e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 1539360044}
   answers:
   - {fileID: 7208568429206184766, guid: f9352dd6dc12d5645a9f2f73ff2b09b7, type: 3}
+  - {fileID: 7208568429206184766, guid: f9352dd6dc12d5645a9f2f73ff2b09b7, type: 3}
+  - {fileID: 7208568429206184766, guid: f9352dd6dc12d5645a9f2f73ff2b09b7, type: 3}
+  - {fileID: 7208568429206184766, guid: f9352dd6dc12d5645a9f2f73ff2b09b7, type: 3}
   spongePrefab:
+  - {fileID: 1841418525587282050, guid: a6467760274784048bf6f9dd66ee52fa, type: 3}
+  - {fileID: 6493501107592098100, guid: 628a284559a1280409005e5dca9bf1d4, type: 3}
+  - {fileID: 5184159335021076728, guid: eae060aecfa4ea94e9a3aeba21486e67, type: 3}
   - {fileID: 7426660317438574157, guid: f9352dd6dc12d5645a9f2f73ff2b09b7, type: 3}
   spongeInitPos: {x: 0, y: 0, z: 5}
-  answerInitPos: {x: 0, y: 0, z: 0}
+  answerInitPos: {x: 0, y: 5, z: 5}
   movingDir: {x: 0, y: 0, z: -1}
-  movingSpeed: 0.01
+  movingSpeed: 0.02
+  score: 0
 --- !u!4 &1698109895
 Transform:
   m_ObjectHideFlags: 0
@@ -2816,6 +2823,7 @@ GameObject:
   - component: {fileID: 1863122792}
   - component: {fileID: 1863122791}
   - component: {fileID: 1863122790}
+  - component: {fileID: 1863122793}
   m_Layer: 0
   m_Name: 'Main Camera '
   m_TagString: MainCamera
@@ -2888,6 +2896,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1863122793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863122789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1878948848
 GameObject:
   m_ObjectHideFlags: 0

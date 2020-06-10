@@ -21,6 +21,7 @@ public class GameMgr : MonoBehaviour {
     private Sponge curSponge;
     private GameObject curAnswer = null;
     private int curID = -1;
+    [SerializeField]
     private int score = 0;
 
     private enum GameState {
@@ -92,7 +93,7 @@ public class GameMgr : MonoBehaviour {
 
     //called when player hit by sponge
     public void playerHit() {
-
+        getDamage();
         //delete sponge
         Destroy(curSponge.gameObject);
 
@@ -124,13 +125,13 @@ public class GameMgr : MonoBehaviour {
 
     private void getDamage() {
         score -= 10;
-        scoreText.text = "SCORE: " + score;
+        scoreText.text = "SCORE: " + score.ToString();
         //TODO:
     }
 
     private void addPoint() {
         score += 10;
-        scoreText.text = "SCORE: " + score;
+        scoreText.text = "SCORE: " + score.ToString();
         //TODO: 
     }
 
