@@ -14,18 +14,13 @@ public class MyGestureListener : MonoBehaviour, GestureListenerInterface
 
     [Tooltip("UI-Text to display the gesture-listener output.")]
     public UnityEngine.UI.Text gestureInfo;
-    public ButtonController buttonController;
-    private MainMgr mainMgr;
 
     // private bool to track if progress message has been displayed
     private bool progressDisplayed;
     private float progressGestureTime;
 
-    private void Awake()
-    {
-        mainMgr = MainMgr.inst;
-    }
-
+    private GestureType curGesture;
+    public GestureType GetCurGesture { get { return curGesture; } }
     // invoked when a new user is detected
     public void UserDetected(ulong userId, int userIndex)
     {
@@ -42,7 +37,7 @@ public class MyGestureListener : MonoBehaviour, GestureListenerInterface
 
         if (gestureInfo != null)
         {
-            //gestureInfo.text = "Please do the gestures and look for the gesture detection state.";
+            gestureInfo.text = "Please do the gestures and look for the gesture detection state.";
         }
     }
 
@@ -74,15 +69,17 @@ public class MyGestureListener : MonoBehaviour, GestureListenerInterface
             case GestureType.ZoomIn:
                 if (progress > 0.5f && gestureInfo != null)
                 {
+                    curGesture = gesture;
+
                     string sGestureText = string.Format("{0} - {1:F0}%", gesture, screenPos.z * 100f);
                     gestureInfo.text = sGestureText;
 
-                    if(buttonController != null)
-                    {
-                        buttonController.start();
-                    }
                     progressDisplayed = true;
                     progressGestureTime = Time.realtimeSinceStartup;
+                }
+                else
+                {
+                    curGesture = GestureType.None;
                 }
                 break;
 
@@ -93,21 +90,33 @@ public class MyGestureListener : MonoBehaviour, GestureListenerInterface
             case GestureType.LeanBack:
                 if (progress > 0.5f && gestureInfo != null)
                 {
+                    curGesture = gesture;
+
                     string sGestureText = string.Format("{0} - {1:F0} degrees", gesture, screenPos.z);
                     gestureInfo.text = sGestureText;
 
                     progressDisplayed = true;
                     progressGestureTime = Time.realtimeSinceStartup;
                 }
+                else
+                {
+                    curGesture = GestureType.None;
+                }
                 break;
             case GestureType.Run:
                 if (progress > 0.5f && gestureInfo != null)
                 {
+                    curGesture = gesture;
+
                     string sGestureText = string.Format("{0} - progress: {1:F0}%", gesture, progress * 100);
                     gestureInfo.text = sGestureText;
 
                     progressDisplayed = true;
                     progressGestureTime = Time.realtimeSinceStartup;
+                }
+                else
+                {
+                    curGesture = GestureType.None;
                 }
                 break;
         }
@@ -124,6 +133,7 @@ public class MyGestureListener : MonoBehaviour, GestureListenerInterface
         if (progressDisplayed)
             return true;
 
+        curGesture = gesture;
         string sGestureText = gesture + " detected";
         if (gestureInfo != null)
         {
@@ -140,6 +150,9 @@ public class MyGestureListener : MonoBehaviour, GestureListenerInterface
     {
         if (userIndex != playerIndex)
             return false;
+
+        if (curGesture == gesture)
+            curGesture = GestureType.None;
 
         if (progressDisplayed)
         {
@@ -160,6 +173,7 @@ public class MyGestureListener : MonoBehaviour, GestureListenerInterface
         // checks for timed out progress message
         if (progressDisplayed && ((Time.realtimeSinceStartup - progressGestureTime) > 2f))
         {
+            curGesture = GestureType.None;
             progressDisplayed = false;
 
             if (gestureInfo != null)

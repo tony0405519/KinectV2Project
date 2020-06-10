@@ -69,9 +69,9 @@ namespace com.rfilkov.kinect
         RaiseRightHand,
         RaiseLeftHand,
         Psi,
-        Tpose,
         Stop,
         Wave,
+        Tpose,
         SwipeLeft,
         SwipeRight,
         SwipeUp,
@@ -80,9 +80,9 @@ namespace com.rfilkov.kinect
         ZoomOut,
         Wheel,
         Jump,
-        Squat,
         Push,
         Pull,
+        Squat,
         ShoulderLeftFront,
         ShoulderRightFront,
         LeanLeft,
@@ -210,24 +210,37 @@ namespace com.rfilkov.kinect
             gestureData.cancelled = false;
 
             gestureData.checkForGestures = new List<GestureType>();
-            switch (gesture)
+
+            #region origin
+            //switch (gesture)
+            //{
+            //    case GestureType.ZoomIn:
+            //        gestureData.checkForGestures.Add(GestureType.ZoomOut);
+            //        gestureData.checkForGestures.Add(GestureType.Wheel);
+            //        break;
+
+            //    case GestureType.ZoomOut:
+            //        gestureData.checkForGestures.Add(GestureType.ZoomIn);
+            //        gestureData.checkForGestures.Add(GestureType.Wheel);
+            //        break;
+
+            //    case GestureType.Wheel:
+            //        gestureData.checkForGestures.Add(GestureType.ZoomIn);
+            //        gestureData.checkForGestures.Add(GestureType.ZoomOut);
+            //        break;
+            //}
+            #endregion
+
+            if (gesture >= GestureType.Tpose && gesture <= GestureType.Pull)
             {
-                case GestureType.ZoomIn:
-                    gestureData.checkForGestures.Add(GestureType.ZoomOut);
-                    gestureData.checkForGestures.Add(GestureType.Wheel);
-                    break;
-
-                case GestureType.ZoomOut:
-                    gestureData.checkForGestures.Add(GestureType.ZoomIn);
-                    gestureData.checkForGestures.Add(GestureType.Wheel);
-                    break;
-
-                case GestureType.Wheel:
-                    gestureData.checkForGestures.Add(GestureType.ZoomIn);
-                    gestureData.checkForGestures.Add(GestureType.ZoomOut);
-                    break;
+                for (var check = GestureType.Tpose; check != GestureType.Pull; check++)
+                {
+                    if (gesture != check)
+                    {
+                        gestureData.checkForGestures.Add(check);
+                    }
+                }
             }
-
             gesturesData.Add(gestureData);
             playerGesturesData[UserId] = gesturesData;
 
@@ -1244,7 +1257,7 @@ namespace com.rfilkov.kinect
                     switch (gestureData.state)
                     {
                         case 0:  // gesture detection - phase 1
-                            if (jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                            if (jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                 jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                 jointsPos[rightHandIndex].y >= gestureBottom && jointsPos[rightHandIndex].y <= gestureTop &&
                                    jointsPos[rightHandIndex].x >= gestureRight /**&& jointsPos[rightHandIndex].x > gestureLeft*/)
@@ -1257,7 +1270,7 @@ namespace com.rfilkov.kinect
                         case 1:  // gesture phase 2 = complete
                             if ((timestamp - gestureData.timestamp) <= 1.0f)
                             {
-                                bool isInPose = jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                                bool isInPose = jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                         jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                         jointsPos[rightHandIndex].y >= gestureBottom && jointsPos[rightHandIndex].y <= gestureTop &&
                                         jointsPos[rightHandIndex].x <= gestureLeft;
@@ -1288,7 +1301,7 @@ namespace com.rfilkov.kinect
                     switch (gestureData.state)
                     {
                         case 0:  // gesture detection - phase 1
-                            if (jointsTracked[leftHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                            if (jointsTracked[leftHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                 jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                 jointsPos[leftHandIndex].y >= gestureBottom && jointsPos[leftHandIndex].y <= gestureTop &&
                                    jointsPos[leftHandIndex].x <= gestureLeft /**&& jointsPos[leftHandIndex].x < gestureRight*/)
@@ -1301,7 +1314,7 @@ namespace com.rfilkov.kinect
                         case 1:  // gesture phase 2 = complete
                             if ((timestamp - gestureData.timestamp) <= 1.0f)
                             {
-                                bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                                bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                         jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                         jointsPos[leftHandIndex].y >= gestureBottom && jointsPos[leftHandIndex].y <= gestureTop &&
                                         jointsPos[leftHandIndex].x >= gestureRight;
@@ -1426,7 +1439,7 @@ namespace com.rfilkov.kinect
                     switch (gestureData.state)
                     {
                         case 0:  // gesture detection - phase 1
-                            if (jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                            if (jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                     jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                     jointsPos[leftHandIndex].y >= gestureBottom && jointsPos[leftHandIndex].y <= gestureTop &&
                                     jointsPos[rightHandIndex].y >= gestureBottom && jointsPos[rightHandIndex].y <= gestureTop &&
@@ -1443,7 +1456,7 @@ namespace com.rfilkov.kinect
                             if ((timestamp - gestureData.timestamp) < 1.0f)
                             {
                                 float angleZoomOut = Vector3.Angle(gestureData.tagVector, vectorZoomOut) * Mathf.Sign(vectorZoomOut.y - gestureData.tagVector.y);
-                                bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                                bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                         jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                         jointsPos[leftHandIndex].y >= gestureBottom && jointsPos[leftHandIndex].y <= gestureTop &&
                                         jointsPos[rightHandIndex].y >= gestureBottom && jointsPos[rightHandIndex].y <= gestureTop &&
@@ -1473,7 +1486,7 @@ namespace com.rfilkov.kinect
                     switch (gestureData.state)
                     {
                         case 0:  // gesture detection - phase 1
-                            if (jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                            if (jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                 jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                 jointsPos[leftHandIndex].y >= gestureBottom && jointsPos[leftHandIndex].y <= gestureTop &&
                                 jointsPos[rightHandIndex].y >= gestureBottom && jointsPos[rightHandIndex].y <= gestureTop &&
@@ -1490,7 +1503,7 @@ namespace com.rfilkov.kinect
                             if ((timestamp - gestureData.timestamp) < 1.0f)
                             {
                                 float angleZoomIn = Vector3.Angle(gestureData.tagVector, vectorZoomIn) * Mathf.Sign(vectorZoomIn.y - gestureData.tagVector.y);
-                                bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                                bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                         jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                         jointsPos[leftHandIndex].y >= gestureBottom && jointsPos[leftHandIndex].y <= gestureTop &&
                                         jointsPos[rightHandIndex].y >= gestureBottom && jointsPos[rightHandIndex].y <= gestureTop &&
@@ -1523,7 +1536,7 @@ namespace com.rfilkov.kinect
                     switch (gestureData.state)
                     {
                         case 0:  // gesture detection - phase 1
-                            if (jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                            if (jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                 jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                 jointsPos[leftHandIndex].y >= gestureBottom && jointsPos[leftHandIndex].y <= gestureTop &&
                                 jointsPos[rightHandIndex].y >= gestureBottom && jointsPos[rightHandIndex].y <= gestureTop &&
@@ -1540,7 +1553,7 @@ namespace com.rfilkov.kinect
                             if ((timestamp - gestureData.timestamp) < 0.5f)
                             {
                                 float angle = Vector3.Angle(gestureData.tagVector, vectorWheel) * Mathf.Sign(vectorWheel.y - gestureData.tagVector.y);
-                                bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] && 
+                                bool isInPose = jointsTracked[leftHandIndex] && jointsTracked[rightHandIndex] && jointsTracked[leftShoulderIndex] && jointsTracked[rightShoulderIndex] &&
                                     jointsTracked[leftHipIndex] && jointsTracked[rightHipIndex] &&
                                     jointsPos[leftHandIndex].y >= gestureBottom && jointsPos[leftHandIndex].y <= gestureTop &&
                                     jointsPos[rightHandIndex].y >= gestureBottom && jointsPos[rightHandIndex].y <= gestureTop &&
