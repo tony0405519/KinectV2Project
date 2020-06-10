@@ -371,34 +371,34 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="LZ4Sharp">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Assets/AzureKinectExamples/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Assets/AzureKinectExamples/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Kinect.Sensor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Assets/AzureKinectExamples/SDK/Kinect4AzureSDK/Plugins/Microsoft.Azure.Kinect.Sensor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Assets/AzureKinectExamples/SDK/Kinect4AzureSDK/Plugins/Microsoft.Azure.Kinect.Sensor.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Assets/AzureKinectExamples/SDK/Kinect4AzureSDK/Plugins/System.Buffers.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Assets/AzureKinectExamples/SDK/Kinect4AzureSDK/Plugins/System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Assets/AzureKinectExamples/SDK/Kinect4AzureSDK/Plugins/System.Memory.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Assets/AzureKinectExamples/SDK/Kinect4AzureSDK/Plugins/System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Assets/AzureKinectExamples/SDK/Kinect4AzureSDK/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Assets/AzureKinectExamples/SDK/Kinect4AzureSDK/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Kinect2UnityWrapper">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Assets/AzureKinectExamples/SDK/KinectSDK2.0/Plugins/Kinect2UnityWrapper.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Assets/AzureKinectExamples/SDK/KinectSDK2.0/Plugins/Kinect2UnityWrapper.dll</HintPath>
     </Reference>
     <Reference Include="Intel.RealSense">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Assets/AzureKinectExamples/SDK/RealSenseSDK2.0/Plugins/Intel.RealSense.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Assets/AzureKinectExamples/SDK/RealSenseSDK2.0/Plugins/Intel.RealSense.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -746,46 +746,46 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Monetization">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/user/Desktop/KinectV2Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/multi-media/KinectV2Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
