@@ -146,6 +146,7 @@
     <Compile Include="Assets\Scenes\ButtonController.cs" />
     <Compile Include="Assets\Script\GameMgr.cs" />
     <Compile Include="Assets\Script\MainMgr.cs" />
+    <Compile Include="Assets\Script\MyGestureListener.cs" />
     <Compile Include="Assets\Script\Sponge.cs" />
     <None Include="Assets\AzureKinectExamples\KinectDemos\PointCloudDemo\VFX\DownloadMoreVFX.txt" />
     <None Include="Assets\AzureKinectExamples\Resources\MedianShader.shader" />
