@@ -88,7 +88,7 @@ public class GameMgr : MonoBehaviour {
 
     //called when player hit by sponge
     public void playerHit() {
-        getDamage();
+        //getDamage();
         //show answer
         curState = GameState.showAnswer;
     }
