@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/start.unity
     guid: 6538ffdd0ba3f0643be80b52ad99d01c
   - enabled: 1
-    path: Assets/Scenes/game.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/AzureKinectExamples/KinectDemos/AvatarDemo/Multi-Media/KinectAvatarsDemo1.unity
+    guid: 4d589fa57be210d48ad7046a1af0d672
   m_configObjects: {}

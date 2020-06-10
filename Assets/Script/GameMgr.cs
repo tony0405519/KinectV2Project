@@ -92,7 +92,7 @@ public class GameMgr : MonoBehaviour {
 
     //called when player hit by sponge
     public void playerHit() {
-        getDamage();
+
         //delete sponge
         Destroy(curSponge.gameObject);
 
