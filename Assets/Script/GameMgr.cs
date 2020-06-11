@@ -51,6 +51,10 @@ public class GameMgr : MonoBehaviour {
     }
 
     void Update() {
+
+        if (MainMgr.isPause)
+            return;
+
         //game thread
         switch (curState) {
             case GameState.ready:
@@ -134,7 +138,5 @@ public class GameMgr : MonoBehaviour {
         scoreText.text = "SCORE: " + score.ToString();
         //TODO: 
     }
-
-
     
 }

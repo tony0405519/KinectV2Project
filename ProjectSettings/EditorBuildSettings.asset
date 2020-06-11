@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/start.unity
     guid: 6538ffdd0ba3f0643be80b52ad99d01c
   - enabled: 1
-    path: Assets/AzureKinectExamples/KinectDemos/AvatarDemo/Multi-Media/SpongeGame.unity
+    path: Assets/Scenes/SpongeGame.unity
     guid: c6b1da8e20efc224e9e217dbc44b844a
   m_configObjects: {}

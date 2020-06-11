@@ -16,11 +16,13 @@ public class ButtonController : MonoBehaviour
     public void pause()
     {
         pauseMenu.SetActive(true);
+        MainMgr.isPause = true;
     }
 
     public void resume()
     {
         pauseMenu.SetActive(false);
+        MainMgr.isPause = false;
     }
 
     public void restart()
