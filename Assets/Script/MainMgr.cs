@@ -44,6 +44,7 @@ public class MainMgr : MonoBehaviour {
 
     public void changeScene(SceneID sceneID) {
         SceneManager.LoadScene((int)sceneID);
+        MainMgr.isPause = false;
         curScene = sceneID;
     }
 

@@ -6,7 +6,6 @@ public class GameMgr : MonoBehaviour {
 
     public UnityEngine.UI.Text scoreText;
     public GameObject gameOver;
-
     public GameObject[] answers;
     public Sponge[] spongePrefab;
 
@@ -24,7 +23,7 @@ public class GameMgr : MonoBehaviour {
     private GameObject curAnswer = null;
     private int curID = -1;
     [SerializeField]
-    private int score = 0;
+    public int score { get; private set; }
 
     private float time = 0f;
     private enum GameState {
@@ -99,7 +98,7 @@ public class GameMgr : MonoBehaviour {
 
         if (Time.realtimeSinceStartup - time >= 3f)
         {
-            if (score > 0)
+            if (score >= 0)
                 closeAnswer();
             else
             {

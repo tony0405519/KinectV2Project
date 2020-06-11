@@ -1,22 +1,15 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(MeshCollider), typeof(MeshFilter), typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 public class Sponge : MonoBehaviour
 {
-    private MeshCollider m_meshCollider;
-    private MeshFilter m_meshFilter;
+    private Rigidbody m_rigidbody;
     private bool firstHit = true;
     private void Awake()
     {
-        m_meshCollider = GetComponent<MeshCollider>();
-        m_meshFilter= GetComponent<MeshFilter>();
-        GetComponent<Rigidbody>().useGravity = false;
-        GetComponent<Rigidbody>().isKinematic = true;
-    }
-
-    void Start()
-    {
-        //m_Collider.isTrigger = true;
+        m_rigidbody = GetComponent<Rigidbody>();
+        m_rigidbody.useGravity = false;
+        m_rigidbody.isKinematic = true;
     }
 
     private void OnTriggerEnter(Collider other)

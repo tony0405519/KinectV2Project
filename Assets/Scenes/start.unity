@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  detectGestures: 010000000200000004000000
+  detectGestures: 010000000200000004000000090000000a000000
   gestureInfo: {fileID: 691105039}
 --- !u!4 &952122140
 Transform:
