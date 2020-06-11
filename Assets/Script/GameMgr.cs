@@ -1,9 +1,11 @@
 ﻿
 using UnityEngine;
+using System.Threading;
 
 public class GameMgr : MonoBehaviour {
 
     public UnityEngine.UI.Text scoreText;
+    public GameObject gameOver;
 
     public GameObject[] answers;
     public Sponge[] spongePrefab;
@@ -24,13 +26,15 @@ public class GameMgr : MonoBehaviour {
     [SerializeField]
     private int score = 0;
 
+    private float time = 0f;
     private enum GameState {
         ready = 0,
         genSponge,
         moving,
-        showAnswer
+        showAnswer,
+        gameover
     }
-    //[SerializeField, Tooltip("For Debug")]
+    [SerializeField, Tooltip("For Debug")]
     private GameState curState = GameState.genSponge;
 
     void Awake()
@@ -38,7 +42,6 @@ public class GameMgr : MonoBehaviour {
         if (inst == null)
         {
             inst = this;
-            DontDestroyOnLoad(this);
         }
         else if (this != inst)
         {
@@ -69,6 +72,9 @@ public class GameMgr : MonoBehaviour {
             case GameState.showAnswer:
                 showAnswer();
                 break;
+            case GameState.gameover:
+                gameover();
+                break;
         }
     }
 
@@ -90,9 +96,33 @@ public class GameMgr : MonoBehaviour {
     private void showAnswer() {
         if(curAnswer == null) {
             curAnswer = Instantiate(answers[curID], answerInitPos, Quaternion.identity);
-            //should use answer call this
-            closeAnswer();
         }
+
+        if (Time.realtimeSinceStartup - time >= 3f)
+        {
+            if (score > 0)
+                closeAnswer();
+            else
+            {
+                gameOver.SetActive(true);
+                time = Time.realtimeSinceStartup;
+                curState = GameState.gameover;
+            }
+
+        }
+
+    }
+
+    private void gameover()
+    {
+        if (Time.realtimeSinceStartup - time >= 3f)
+        {
+            Debug.Log("pass");
+            gameOver.SetActive(false);
+            MainMgr.inst.changeScene(SceneID.Start);
+            curState = GameState.ready;
+        }
+        
     }
 
     //called when player hit by sponge
@@ -102,6 +132,7 @@ public class GameMgr : MonoBehaviour {
         Destroy(curSponge.gameObject);
 
         //show answer
+        time = Time.realtimeSinceStartup;
         curState = GameState.showAnswer;
     }
     
