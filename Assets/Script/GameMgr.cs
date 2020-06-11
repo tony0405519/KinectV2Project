@@ -50,7 +50,6 @@ public class GameMgr : MonoBehaviour {
     }
 
     void Start() {
-        
     }
 
     void Update() {

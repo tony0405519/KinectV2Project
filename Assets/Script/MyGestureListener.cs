@@ -21,6 +21,11 @@ public class MyGestureListener : MonoBehaviour, GestureListenerInterface
 
     private GestureType curGesture;
     public GestureType GetCurGesture { get { return curGesture; } }
+
+    private void Start()
+    {
+        com.rfilkov.kinect.KinectManager.Instance.gestureManager.RefreshGestureListeners();
+    }
     // invoked when a new user is detected
     public void UserDetected(ulong userId, int userIndex)
     {
