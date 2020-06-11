@@ -12,6 +12,8 @@ public class GameMgr : MonoBehaviour {
     [Tooltip("position of sponge generate")]
     public Vector3 spongeInitPos;
     [Tooltip("position of answer showing")]
+    public Quaternion spongeInitRot;
+    [Tooltip("position of answer showing")]
     public Vector3 answerInitPos;
     [Tooltip("sponge moving speed")]
     public Vector3 movingDir;
@@ -80,7 +82,8 @@ public class GameMgr : MonoBehaviour {
         
         //random generate sponge from prefab
         int type = MainMgr.randomNumber(0, spongePrefab.Length);
-        curSponge = Instantiate(spongePrefab[type], spongeInitPos, Quaternion.identity);
+        //curSponge = Instantiate(spongePrefab[type], spongeInitPos, Quaternion.identity);
+        curSponge = Instantiate(spongePrefab[type], spongeInitPos, spongeInitRot);
         curID = type;
         //start moving after finish generate
         curState = GameState.moving;
