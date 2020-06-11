@@ -603,6 +603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324e834f32c284c4c8505ea06a112f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonController: {fileID: 1775981521}
+  curScene: 0
 --- !u!1 &985691440
 GameObject:
   m_ObjectHideFlags: 0

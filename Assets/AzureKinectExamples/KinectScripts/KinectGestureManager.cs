@@ -69,8 +69,8 @@ namespace com.rfilkov.kinect
         RaiseRightHand,
         RaiseLeftHand,
         Psi,
-        Stop,
         Wave,
+        Stop,
         Tpose,
         SwipeLeft,
         SwipeRight,
@@ -231,16 +231,22 @@ namespace com.rfilkov.kinect
             //}
             #endregion
 
-            if (gesture >= GestureType.Tpose && gesture <= GestureType.Pull)
-            {
-                for (var check = GestureType.Tpose; check != GestureType.Pull; check++)
-                {
-                    if (gesture != check)
-                    {
-                        gestureData.checkForGestures.Add(check);
-                    }
-                }
-            }
+            //if (gesture >= GestureType.Tpose && gesture <= GestureType.Pull)
+            //{
+            //    for (var check = GestureType.Tpose; check != GestureType.Pull; check++)
+            //    {
+            //        if (gesture != check)
+            //        {
+            //            gestureData.checkForGestures.Add(check);
+            //        }
+            //    }
+            //}
+
+            if(gesture == GestureType.Wave)
+                gestureData.checkForGestures.Add(GestureType.RaiseRightHand);
+            else if (gesture == GestureType.RaiseRightHand)
+                gestureData.checkForGestures.Add(GestureType.Wave);
+
             gesturesData.Add(gestureData);
             playerGesturesData[UserId] = gesturesData;
 
